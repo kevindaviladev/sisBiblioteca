@@ -1,0 +1,68 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+
+
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" >
+            
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+
+
+                <div class="col-md-10"  >
+                    <div class="form-group">
+                      <!-- <label>Company (disabled)</label> -->
+                      <h5 class="title" style="color:red; text-align: center" >Reserva de material bibliográfico</h5>
+                      <div class="form-group" style="text-align: center;">
+                        <button type="submit" (click)="openModal" class="btn btn-secondary">Conozco el código</button>
+                        <button type="submit" (click)="login()" class="btn btn-secondary">Búsqueda avanzada</button>
+                    </div>
+                    </div>
+                  </div>
+
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-scrollable"  role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"> CONOZCO EL CÓDIGO </h4>
+              <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+    
+            </div>
+            <div class="modal-body">
+              <div class="">    
+               
+            
+              </div>
+        
+            </div>
+        
+            <div class="modal-footer ">
+              <button class="button" type="button"  (click)="onCloseHandled()" >Close</button>
+        
+            </div>
+        
+          </div><!-- /.modal-content -->
+        
+        </div><!-- /.modal-dialog -->  
+    </div>
+
+
+
+
+   
+
+
+  </div>
+</div>

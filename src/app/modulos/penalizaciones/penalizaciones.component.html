@@ -1,0 +1,33 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-warning" >
+              <h4 class="card-title">Historial de multas</h4>
+            </div>            
+            <div class="col-md-12">
+                <div class="card-content table-responsive table-full-width">
+                    <table class="table">
+                      <thead class="text-danger">
+                        <th>Material</th>
+                        <th>Código</th>
+                        <th>Fecha</th>
+                        <th>Penalización</th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of elemento">
+                          <td>{{e.material}}</td>
+                          <td>{{e.idEjemplar}}</td>
+                          <td>{{e.fecha}}</td>
+                          <td>{{e.penalizacion}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

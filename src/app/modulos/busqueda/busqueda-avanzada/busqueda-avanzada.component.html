@@ -1,0 +1,168 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" >
+            
+          </div>
+          <div class="card-body">
+            <form>
+
+              <div class="row">
+                <div class="col-md-8"  >
+                    <div class="form-group">
+                      <!-- <label>Company (disabled)</label> -->
+                      <h5 class="title" style="color:red" >Búsqueda Avanzada de Materiales Bibliográficos</h5>
+                     
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">                      
+                          <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="Nombre">
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div>
+                          <button (click)="listar()" class="btn form-control now-ui-icons ui-1_zoom-bold" style="position:absolute;bottom:0%;background: gray;"></button>
+                        </div>
+                      </div>
+                   </div>
+                    
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">                      
+                          <select name="año_busqueda" [(ngModel)]="year" name="year" id="año_busqueda" class="form-control" value="año_busqueda">
+                            <option disabled selected>Año</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2019">2019</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 ">
+                        <div class="form-group">
+                          <select name="edicion_busqueda" [(ngModel)]="edicion" name="edicion" id="edicion_busqueda" class="form-control" value="edicion_busqueda">
+                              <option disabled selected>Edición</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                          </select>
+                        </div>
+                      </div>                       
+                    </div>
+
+                    <div class="form-group">                      
+                      <input [(ngModel)]="autor" name="autor" type="text" class="form-control" placeholder="Autor">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">                      
+                          <select name="tipo_busqueda" [(ngModel)]="tipo" name="tipo" id="tipo_busqueda" class="form-control" value="tipo_busqueda">
+                            <option disabled selected>Tipo</option>
+                            <option value="revista">Revista</option>
+                            <option value="tesis">Tesis</option>
+                            <option value="libro">Libro</option>
+                            <option value="articulo">Artículo</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 ">
+                        <div class="form-group">
+                          <select name="idioma_busqueda" [(ngModel)]="idioma" name="idioma" id="idioma_busqueda" class="form-control">
+                              <option disabled selected>Idioma</option>
+                              <option value="español">Español</option>
+                              <option value="ingles">Inglés</option>
+                              <option value="frances">Francés</option>
+                              <option value="italiano">Italiano</option>
+                              <option value="portugues">Portugues</option>
+                          </select>
+                        </div>
+                      </div>                       
+                    </div>
+
+                  </div>  
+                  
+              </div>
+
+          
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div *ngIf="mostrar" id="listado">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-warning" >
+                    <h4 class="card-title">Listado de materiales</h4>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="card-content table-responsive table-full-width">
+                          <table class="table">
+                            <thead class="text-danger">
+                              <th></th>
+                              <th>Tipo</th>
+                              <th>Título</th>
+                              <th>Autor</th>
+                              <th>Año</th>
+                              <th>Idioma</th>
+                              <th>Tema</th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let e of elemento">
+                                <td><a (click)="goToLibroDatos(e.idMaterial)">
+                                  <img class="img-circle" width="50%" src="{{e.portada}}" alt="">
+                                </a>
+                                </td>
+                                <td>{{e.tipo}}</td>
+                                <td (click)="goToLibroDatos(e.idMaterial)">{{e.titulo}}</td>
+                                <td>{{e.autor}}</td>
+                                <td>{{e.year}}</td>
+                                <td>{{e.idioma}}</td>
+                                <td>{{e.tema}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+  </div>
+</div>

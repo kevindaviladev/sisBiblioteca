@@ -1,0 +1,86 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+
+
+
+
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" >
+          </div>
+          <div class="card-body">
+              <div class="row">
+
+                <div class="col-md-4"  >
+                    <div class="image">
+                      <img src="http://www.usat.edu.pe/web/wp-content/uploads/2015/07/logousat.jpg" height="200" width="200">
+                    </div>
+                </div>
+                <form>
+                <div class="form-group"  >
+                    <div class="col-md-8">
+                      <!-- <label>Company (disabled)</label> -->
+                      <h5 class="title" style="color:red" >Búsqueda Clásica de Materiales Bibliográficos</h5>
+                      <input type="text" class="form-control"  placeholder="Ingresar Búsqueda" [(ngModel)]="filtro" name="filtro">
+                      <div class="col-md-4">
+                        <!-- <button data-toggle="collapse" (click)="listar()" data-target="#listado" class="btn form-control now-ui-icons ui-1_zoom-bold" style="background: gray;"></button> -->
+                        <button (click)="listar()"  class="btn form-control now-ui-icons ui-1_zoom-bold" style="background: gray;"></button>
+                        <!-- <button data-toggle="collapse" data-target="#listado">Collapsible</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    
+      <div *ngIf="mostrar" id="listado">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-warning" >
+                  <h4 class="card-title">Listado de materiales</h4>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table">
+                          <thead class="text-danger">
+                            <th></th>
+                            <th>Tipo</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Año</th>
+                            <th>Idioma</th>
+                            <th>Tema</th>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let e of elemento">
+                              <td><a (click)="goToLibroDatos(e.idMaterial)">
+                                <img class="img-circle" width="50%" src="{{e.portada}}" alt="">
+                              </a>
+                              </td>
+                              <td>{{e.tipo}}</td>
+                              <td (click)="goToLibroDatos(e.idMaterial)">{{e.titulo}}</td>
+                              <td >{{e.autor}}</td>
+                              <td>{{e.year}}</td>
+                              <td>{{e.idioma}}</td>
+                              <td>{{e.tema}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+   
+
+
+  </div>
+</div>

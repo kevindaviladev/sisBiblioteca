@@ -1,0 +1,59 @@
+
+<div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+      <div class="logo-img">
+          <img src="./assets/img/angular2-logo-white.png"/>
+      </div>
+    </a>
+    <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        Biblioteca USAT
+    </a>
+</div>
+<!-- ORIGINAL -->
+<!-- <div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a [routerLink]="[menuItem.path]">
+                <i class="now-ui-icons {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div> -->
+<!-- ORIGINAL -->
+<div class="sidebar-wrapper">
+    <div class="nav-container">
+            <ul class="nav" data-color="">
+                <li routerLinkActive="active"  *ngFor="let menuItem of menuItems; let i = index" >
+                    
+                    <a  *ngIf="menuItem.path != '' " class="nav-link" [routerLink]="[menuItem.path]" >
+                        <i class="now-ui-icons {{menuItem.icon}}"></i>
+                        <p>{{menuItem.title}}</p>
+                    </a>
+                    
+                    <!-- <a *ngIf="menuItem.path == ''" routerlinkactive="active" data-toggle="collapse" aria-expanded="false" attr.aria-controls="venta"> -->
+                    <a *ngIf="menuItem.path == ''" data-toggle="collapse" attr.data-target="#{{menuItem.title}}">
+                    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#venta" aria-expanded="false" aria-controls="venta"> -->
+                        <i class="now-ui-icons {{menuItem.icon}}"></i>
+                        <p>
+                            {{menuItem.title}} <b *ngIf="menuItem.children != null" class="caret"></b>
+                        </p>
+                    <!-- </button> -->
+                    </a>
+                    
+                    <div id="{{menuItem.title}}" class="collapse">
+                        <ul class="nav">
+                            <li routerLinkActive="active" *ngFor="let children of menuItem.children; let j = index">
+                                <a [routerLink]="[children.path]" >
+                                    <!-- <span class="sidebar-mini">{{children.icon}}</span> -->
+                                    <i class="now-ui-icons {{children.icon}}"></i>
+                                    <span class="sidebar-normal">{{children.title}}</span>  
+                                    <!-- {{children.title}}</p> -->
+                                </a>
+                            </li>
+                        </ul>       
+                    </div>  
+                </li>
+            </ul>
+    </div>
+</div>

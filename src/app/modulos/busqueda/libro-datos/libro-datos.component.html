@@ -1,0 +1,62 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" >         
+          </div>
+          <div class="card-body">
+            <div class="row">
+    
+              <div class="col-md-4">
+                <div class="card-user" >
+                  <img  [src]="portada" alt="...">
+                </div>
+              </div>          
+              <div class="col-md-8">
+                  <form action="#">  
+                    <div class="form-group">
+                      <label for=""></label>
+                        <input [(ngModel)]="titulo" name="titulo" id="titulo" type="titulo" class="form-control" placeholder="Título del libro">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="autor" name="autor" id="titulo" type="titulo" class="form-control" placeholder="Autor">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="anho" name="anho" id="titulo" type="titulo" class="form-control" placeholder="Año">
+                    </div>
+                    <div class="form-group">
+                      <input [(ngModel)]="edicion" name="edicion" id="titulo" type="titulo" class="form-control" placeholder="Edición">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="descripcion" name="descripcion" id="titulo" type="titulo" class="form-control" placeholder="Descripción del libro">
+                    </div>
+                    <div *ngIf="usuario == 'A'" class="card-content table-responsive table-full-width" style="text-align: center;">
+                        <table class="table">
+                            <thead>
+                              <th>Código</th>
+                              <th>Acción</th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let e of elemento">
+                                  <td>{{e.idEjemplar}}</td>
+                                  <td>
+                                    <button class="btn btn-success" (click)="reservarEjemplar(e.idEjemplar)">RESERVAR</button>
+                                  </td>    
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </form>
+  
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+
+  </div>
+</div>

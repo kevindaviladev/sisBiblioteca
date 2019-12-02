@@ -1,0 +1,84 @@
+<div class="panel-header panel-header-sm">
+  </div>
+  <div class="main-content">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="title">Perfil de estudiante</h5>
+              </div>
+         <br><br>
+          <div class="card-body">
+            <form>
+            <div class="author">
+                <img class="avatar border-gray" src="../assets/img/mike.jpg" [(ngModel)]="foto" name="foto" ngDefaultControl>     
+            </div>
+            <div class="row">
+                <div class="col-md-2 pr-1">
+                  <div class="form-group">
+                    <label>DNI</label>
+                    <input type="text" class="form-control" disabled=""  [(ngModel)]="dni" name="dni">
+                  </div>
+                </div>
+                <div class="col-md-4 px-1">
+                  <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" class="form-control"  [ngModel]="correo" name="correo">
+                  </div>
+                </div>
+                <div class="col-md-3 pl-1">
+                  <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input name="telefono" id="telefono" type="text" class="form-control" [(ngModel)]="telefono" name="telefono">
+                  </div>
+                </div>
+                <div class="col-md-3 pl-1">
+                    <div class="form-group">
+                      <label for="telefono">Fecha de nacimiento</label>
+                      <input type="date" class="form-control" [(ngModel)]="fecNac" name="fecNac">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" [(ngModel)]="nombres" name="nombres">
+                  </div>
+                </div>
+                <div class="col-md-3 pl-1">
+                  <div class="form-group">
+                    <label>Apellido Paterno</label>
+                    <input type="text" class="form-control" [(ngModel)]="apellidoPaterno" name="apellidoPaterno">
+                  </div>
+                </div>
+                <div class="col-md-3 pl-1">
+                    <div class="form-group">
+                      <label>Apellido Materno</label>
+                      <input type="text" class="form-control" [(ngModel)]="apellidoMaterno" name="apellidoMaterno">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" [(ngModel)]="direccion" name="direccion">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <button class="btn btn-sm btn-success pull-right" >Guardar cambios</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

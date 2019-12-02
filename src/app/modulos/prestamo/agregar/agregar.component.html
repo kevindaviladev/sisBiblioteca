@@ -1,0 +1,38 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-9">
+        <div class="card">
+          <div class="card-header" >
+              <h4 class="card-title">Prétamo de Libro</h4>
+          </div>
+          <div class="card-body">
+
+              <div class="row">
+                <div class="col-full-with"  >
+                    <div class="image">
+                      <img src="http://www.usat.edu.pe/web/wp-content/uploads/2015/07/logousat.jpg" height="200" width="200">
+                    </div>
+                </div>
+
+                <div class="col-md-5"  >
+                    <div class="form-group">
+                      <input [(ngModel)]="dni" type="text" class="form-control" placeholder="DNI Estudiante">
+                      <br>
+                      <input [(ngModel)]="idEjemplar" type="text" class="form-control" placeholder="Código Libro">
+                      <br>
+                      <input [(ngModel)]="fechaEntrega" type="text" class="form-control" placeholder="Fecha de Entrega" disabled>
+                      <button (click)="agregarPrestamo()" type="button"class="btn btn-danger btn-sm" style="margin-left: 33%;" >Aceptar</button>
+                    </div>
+                  </div>
+
+              </div>
+          </div>
+
+          
+        </div>
+      </div>
+    
+  </div>
+</div>
