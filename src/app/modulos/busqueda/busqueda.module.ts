@@ -10,10 +10,13 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { LibroDatosComponent } from './libro-datos/libro-datos.component';
 import { EjemplarService } from '../../servicios/modulos/ejemplar.services';
+import { BusquedaComponent } from './busqueda.component';
 @NgModule({
   declarations: [
+    BusquedaComponent,
     BusquedaClasicaComponent, 
-    BusquedaAvanzadaComponent, LibroDatosComponent
+    BusquedaAvanzadaComponent, 
+    LibroDatosComponent
   ],
   imports: [
     CommonModule,

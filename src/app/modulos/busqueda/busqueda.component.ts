@@ -11,7 +11,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 })
 export class BusquedaComponent implements OnInit {
 
-    constructor( public location: Location, private router: Router){}
+    constructor(){}
 
     ngOnInit() {
 
