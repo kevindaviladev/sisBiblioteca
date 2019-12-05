@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
 
     }
 
+    
     login(){
+      if(this.usuario){
+
+      }
       this.alumnoService.login(this.usuario,this.clave).then(
         (data) => {
           console.log(data);
@@ -60,5 +64,6 @@ export class LoginComponent implements OnInit {
             )
         }
     }).catch((error) => console.log(error));
-}
+    }
+    
 }

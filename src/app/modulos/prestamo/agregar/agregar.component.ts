@@ -23,6 +23,7 @@ export class AgregarComponent implements OnInit {
   }
 
   agregarPrestamo(){
+    // alert("El codigo ingresado no pertenece a ningún ejemplar");
     this.prestamoService.agregarPrestamo(this.dni,this.idEjemplar,localStorage.getItem('idUsuario')).then(
       (data) => {
         console.log(data);

@@ -51,7 +51,7 @@
                         <th>Código</th>
                         <th>DNI</th>
                         <th>Alumno</th>
-                        <th>Fecha</th>
+                        <th>Fecha realización</th>
                         <th>Estado</th>
                         <th>Accion</th>
                       </thead>
@@ -66,9 +66,9 @@
                           <td>{{e.dni}}</td>
                           <td>{{e.Alumno}}</td>
                           <td>{{e.fechaPrestamo}}</td>
-                          <td>{{e.estado}}</td>
+                          <td *ngIf="e.estado">Disponible</td>
                           <td>
-                            <button (click)="finalizarPrestamo(e.idPrestamo)">FINALIZAR</button>
+                            <button class="btn btn-danger btn-sm" (click)="finalizarPrestamo(e.idPrestamo)">FINALIZAR</button>
                           </td>
                         </tr>
                       </tbody>

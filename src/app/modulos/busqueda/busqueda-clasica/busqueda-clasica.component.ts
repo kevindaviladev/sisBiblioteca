@@ -16,8 +16,9 @@ export class BusquedaClasicaComponent implements OnInit {
       private router: Router
   ) { }
 
-  filtro;
+  filtro = null;
   mostrar = false;
+  vacio = false;
 
   ngOnInit() {
     // console.log(this.filtro);
@@ -26,6 +27,10 @@ export class BusquedaClasicaComponent implements OnInit {
   }
 
   listar(){
+    if(this.filtro=="" || this.filtro==null){
+      alert("Introduzca un valor de búsqueda");
+      return;
+    }
     this.materialService.busquedaClasica(this.filtro).then(
       (data:any) => {
         // console.log(data);
@@ -33,8 +38,10 @@ export class BusquedaClasicaComponent implements OnInit {
         console.log(this.elemento);
         if(this.elemento.length>0){
           this.mostrar = true;
+          this.vacio = false;
         }else{
           this.mostrar = false;
+          this.vacio = true;
         }
       }
     )
